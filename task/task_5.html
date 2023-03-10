@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 5</title>
+</head>
+
+<body>
+	<script>
+		//Дано масив елементів. Знайти добуток додатних елементів(використовуючи for of)
+		const userNumber = parseInt(prompt('Введіть кількість елементів масиву'))
+		//функція для рандомного значення
+		function getRandomNumber(minValue, maxValue) {
+			const random = minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+			return random
+		}
+		//функція для створення масиву
+		function makeArray(numberElement) {
+			let arr = []
+			for (let i = 0; i < numberElement; i++) {
+				arr.push(getRandomNumber(-50,50))
+			}
+			return arr
+		}
+		const userArray = makeArray(userNumber)
+		//знаходимо добуток додатних елементів
+		function getSummPositiveNumbers(arr) {
+			let product = 1
+			for (let item of arr) {
+				if(item > 0) product*=item
+			}
+			return product
+		}
+		const summPositiveNumbers = getSummPositiveNumbers(userArray)
+		document.write(`<p>Створений масив: <span>${userArray}</span><br>
+			Добуток додатних елементів: <span>${summPositiveNumbers}</span></p>`)
+	</script>
+</body>
+</html>

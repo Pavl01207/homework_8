@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 7</title>
+</head>
+
+<body>
+	<script>
+		//Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.
+		const userNumber = parseInt(prompt('Введіть кількість товарів'))
+		//функція для рандомного значення
+		function getRandomNumber(minValue, maxValue) {
+			const random = minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+			return random
+		}
+		//функція для створення масиву
+		function makeArray(numberElement) {
+			let arr = []
+			for (let i = 0; i < numberElement; i++) {
+				arr.push(getRandomNumber(800,1400))
+			}
+			return arr
+		}
+		const userArray = makeArray(userNumber)
+		document.write(`<p>Перелік цін без знижок: <span>${userArray}</span>.</p>`)
+		//додаємо 30% знижки до цін які більше 1000грн
+		userArray.forEach((item, index, array) => {
+			if (item > 1000) array[index] -= Math.round(array[index]*0.3)
+		})
+		document.write(`<p>Перелік цін із знижкою: <span>${userArray}</span>.</p>`)
+	</script>
+</body>
+</html>

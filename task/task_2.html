@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 2</title>
+</head>
+
+<body>
+	<script>
+		//Користувач вводить кількість елементів. Створити масив, у якому перша половина заповнена 1-цями, а друга заповнена 7-ками.
+		//внесення користувачем кількості елементів
+		const userNumber = parseInt(prompt('Введіть кількість елементів'))
+		//отримуємо значення половини кількості масиву
+		const halfOfArray = Math.round(userNumber / 2)
+		//створення масиву із одиницями
+		let arrayWithOne = new Array(userNumber).fill(1)
+		//заповнюємо половину масиву 7
+		const arrayWithOneAndSeven = arrayWithOne.fill(7, halfOfArray)
+		//виводимо результат
+		document.write(`<p>Створений масив: <span>${arrayWithOneAndSeven}</span>.</p>`)
+	</script>
+</body>
+</html>

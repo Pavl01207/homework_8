@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 8</title>
+</head>
+
+<body>
+	<script>
+		//Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»
+		const carsNumbers = ['RF56IR', 'FA569UT', 'AA5409ND','GT5647T', 'AR9034DL', 'AYDF89', 'RT678DS', 'TRAS90', 'ARTF560']
+		document.write(`<p>Перелік номерів авто: <span>${carsNumbers}</span>.</p>`)
+		//створюємо новий масив із тих, які починаються на «А»
+		const carsNumbersWithStartA = carsNumbers.filter((element, index, array) => array[index][0] === 'A')
+		document.write(`<p>Перелік номерів, які починаються на «А»: <span>${carsNumbersWithStartA}</span>.</p>`)
+	</script>
+</body>
+</html>
